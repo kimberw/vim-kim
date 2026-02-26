@@ -1,0 +1,11 @@
+# Plugin dependencies (installed by vim-plug)
+my_plugins/
+
+# Temp directories
+temp_dirs/
+
+# OS files
+.DS_Store
+
+# Claude settings
+.claude/
