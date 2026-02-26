@@ -121,6 +121,8 @@ Plug 'tpope/vim-surround'                  " 括号/引号环绕
 Plug 'tpope/vim-fugitive'                  " Git 集成
 Plug 'airblade/vim-gitgutter'              " Git 变更显示
 Plug 'scrooloose/nerdcommenter'            " 快速注释
+Plug 'jiangmiao/auto-pairs'                " 自动补全括号/引号
+Plug 'sheerun/vim-polyglot'                " 多语言语法高亮
 
 " -----------------------------------------------------------------------------
 " 代码补全/检查
@@ -235,6 +237,18 @@ let g:vm_enable_normal_usage = 1
 nmap <Leader>w <Plug>(vm-visual-multi)
 
 " -----------------------------------------------------------------------------
+" nerdcommenter 配置
+" -----------------------------------------------------------------------------
+let g:NERDSpaceDelims = 1           " 注释后加空格
+let g:NERDCompactSexyComs = 1       " 性感注释使用紧凑样式
+
+" 快捷键映射 (gc 系列类似 vim-commentary)
+xmap gc  <plug>NERDCommenterToggle
+nmap gcc <plug>NERDCommenterToggle
+nmap gca <plug>NERDCommenterAltDelims
+nmap gcs <plug>NERDCommenterSexy
+
+" -----------------------------------------------------------------------------
 " Autoformat 配置
 " -----------------------------------------------------------------------------
 noremap <F3> :Autoformat<CR>
@@ -246,10 +260,20 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " -----------------------------------------------------------------------------
-" Gruvbox 主题配置 (插件安装后启用)
+" Gruvbox 主题配置
 " -----------------------------------------------------------------------------
-" colorscheme gruvbox
-" set background=dark
+let g:gruvbox_contrast_dark = 'medium'  " soft, medium, hard
+let g:gruvbox_improved_strings = 1
+let g:gruvbox_improved_warnings = 1
+let g:gruvbox_underline = 1
+let g:gruvbox_italicize_strings = 1
+
+" 主题设置（会覆盖 basic.vim 中的 desert）
+try
+    colorscheme gruvbox
+catch
+endtry
+set background=dark
 
 " -----------------------------------------------------------------------------
 " 其他常用映射

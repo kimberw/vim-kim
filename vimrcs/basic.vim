@@ -142,10 +142,11 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
+" 主题在 my_configs.vim 中设置 (gruvbox)
+" try
+"     colorscheme desert
+" catch
+" endtry
 
 set background=dark
 
