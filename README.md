@@ -20,7 +20,13 @@
 
 ## 安装
 
-### 运行安装脚本
+### 1. 克隆仓库
+
+```bash
+git clone git@github.com:kimberw/vim-kim.git ~/.vim_kim
+```
+
+### 2. 运行安装脚本
 
 ```bash
 sh ~/.vim_kim/install.sh
